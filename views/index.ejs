@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <br>
+    <form method="get" action="http://localhost:8080/posts/new"><button>New Poast</button>
+    </form>
+        
+        <% for(let i=0;i<allinfo.length;i++) { %>
+        <div class="pos">
+            <h5>id:<%= allinfo[i].id%></h5>
+            <h3 class="us">@<%= allinfo[i].username %></h3>
+            <h4><%= allinfo[i].content %></h4>
+            <div class="op">
+            <form method="get" action="http://localhost:8080/posts/<%=allinfo[i].id%>">
+                <button>viwes</button>
+            </form>
+
+            <form method="get" action="http://localhost:8080/posts/<%=allinfo[i].id%>/edit">
+                <button>Edit</button>
+            </form>
+
+            <form method="post" action="/posts/<%=allinfo[i].id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+           </div>
+            
+        </div>
+       
+        <hr>
+        <% } %>
+
+        
+    </div>
+</body>
+</html>

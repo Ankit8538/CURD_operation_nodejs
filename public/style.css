@@ -1,0 +1,21 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1
+{
+    color: maroon;
+}
+.pos
+{
+    background-color: blanchedalmond;
+}
+.us
+{
+    font-style: italic;
+}
+.op
+{
+   display: flex;
+   justify-content: space-evenly;
+}
